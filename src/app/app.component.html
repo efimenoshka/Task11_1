@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h3>Добавить новый датчик</h3>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-4 text-left">
+      <div class="form-group">
+        <label>Введите название датчика</label>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="inputDet">
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="form-group">
+        <button class="btn btn-primary" (click)="onPlus()">Добавить</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let item of dets">
+      <div class="card text-center" style="width: 10em;">
+        <div class="card-header" [style.background-color]="item.status? 'green' : 'red'">{{item.id}}</div>
+        <div class="card-body">
+          <h6 class="card-title">{{item.name}}</h6>
+          <a href="#" class="btn btn-primary" (click)="onDelete(item)">Удалить</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
